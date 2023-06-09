@@ -114,6 +114,11 @@ _G.packer_plugins = {
     path = "/home/sahith/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
   },
+  ["live-server"] = {
+    loaded = true,
+    path = "/home/sahith/.local/share/nvim/site/pack/packer/start/live-server",
+    url = "https://github.com/manzeloth/live-server"
+  },
   ["lspkind.nvim"] = {
     loaded = true,
     path = "/home/sahith/.local/share/nvim/site/pack/packer/start/lspkind.nvim",
