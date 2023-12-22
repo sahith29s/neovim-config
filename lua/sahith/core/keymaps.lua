@@ -1,5 +1,4 @@
 vim.g.mapleader = " "
-
 local keymap = vim.keymap -- for conciseness
 
 -- general keymaps
@@ -22,7 +21,7 @@ keymap.set("n", "<leader>l", "<C-w>w")
 keymap.set("n", "<leader>-", "<C-a>")
 keymap.set("n", "<leader>c", "caw")
 keymap.set("n", "<leader>m", ":delete<cr>")
--- keymap.set("n", "<leader>i", "cit")
+keymap.set("n", "<leader>i", "cit")
 keymap.set("n", "<leader>i", "gcc")
 -- keymap.set("n", "g/", "gcc")
 
