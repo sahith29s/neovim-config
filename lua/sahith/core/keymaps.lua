@@ -1,80 +1,45 @@
 vim.g.mapleader = " "
-local keymap = vim.keymap -- for conciseness
+local sahith = vim.keymap -- for conciseness
 
 -- general keymaps
+sahith.set("i", "jk", "<ESC>")
+sahith.set("i", "kj", "<ESC>")
+sahith.set("i", "jd", "<ESC>o")
+sahith.set("i", "jf", "<ESC>")
+sahith.set("i", "js", "<Esc>S")
+sahith.set("i", "ji", "<Esc>I")
+sahith.set("i", "ja", "<Esc>A")
+sahith.set("i", "jv", "<Esc>V")
+sahith.set("i", "j;", "<esc>v")
+sahith.set("i", "j;", "<ESC>mqA;<ESC>`qa")
+sahith.set("i", "<C-H>", "<C-W>")
 
-keymap.set("i", "jk", "<ESC>")
-keymap.set("i", "kj", "<ESC>")
-keymap.set("i", "jd", "<ESC>o")
-keymap.set("i", "jf", "<ESC>")
-keymap.set("i", "js", "<Esc>S")
-keymap.set("i", "ji", "<Esc>I")
-keymap.set("i", "ja", "<Esc>A")
-keymap.set("i", "jv", "<Esc>V")
-keymap.set("i", "j;", "<esc>v")
-keymap.set("i", "j;", "<ESC>mqA;<ESC>`qa")
-keymap.set("i", "<C-H>", "<C-W>")
+sahith.set("n", "<leader>r", "diw")
+sahith.set("n", "<leader>+", "<C-a>")
+sahith.set("n", "<leader>l", "<C-w>w")
+sahith.set("n", "<leader>-", "<C-a>")
+sahith.set("n", "<leader>c", "ciw")
+sahith.set("n", "<leader>m", ":delete<cr>")
+sahith.set("n", "<leader>i", "cit")
+sahith.set("n", "<leader>i", "gcc")
 
-keymap.set("n", "<leader>r", "daw")
-keymap.set("n", "<leader>+", "<C-a>")
-keymap.set("n", "<leader>l", "<C-w>w")
-keymap.set("n", "<leader>-", "<C-a>")
-keymap.set("n", "<leader>c", "caw")
-keymap.set("n", "<leader>m", ":delete<cr>")
-keymap.set("n", "<leader>i", "cit")
-keymap.set("n", "<leader>i", "gcc")
--- keymap.set("n", "g/", "gcc")
+sahith.set("n", "<leader>s", "S")
+sahith.set("n", "<leader>v", "V")
+sahith.set("n", "<leader>a", "A")
+sahith.set("n", "<leader>f", "I")
+sahith.set("n", "<leader>j", "_")
+sahith.set("n", "<leader>k", "$")
+sahith.set("n", "<leader>;", "mqA;<ESC>`q")
 
-keymap.set("n", "<leader>s", "S")
-keymap.set("n", "<leader>v", "V")
-keymap.set("n", "<leader>a", "A")
-keymap.set("n", "<leader>f", "I")
-keymap.set("n", "<leader>j", "_")
-keymap.set("n", "<leader>k", "$")
-keymap.set("n", "<leader>;", "mqA;<ESC>`q")
-
--- keymap.set("n", "<leader>s", ":w<CR>")
-keymap.set("n", "<leader>w", "<C-w>v")
-keymap.set("n", "<leader>n", "<C-w>s")
--- keymap.set("n", "<leader>s", "<C-w>=")
-keymap.set("n", "<leader>x", ":close<CR>")
-keymap.set("n", "<leader>nh", ":nohl<CR>")
+-- sahith.set("n", "<leader>s", ":w<CR>")
+sahith.set("n", "<leader>w", "<C-w>v")
+sahith.set("n", "<leader>n", "<C-w>s")
+-- sahith.set("n", "<leader>s", "<C-w>=")
+sahith.set("n", "<leader>x", ":close<CR>")
+sahith.set("n", "<leader>nh", ":nohl<CR>")
 
 -- vim maximizer
-keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>")
+-- sahith.set("n", "<leader>sm", ":MaximizerToggle<CR>")
 
 --for Nvim tree file expolorer
-keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
-
--- control backspace
--- keymap.set("i", "<C-backspace>", "<ESC>caw")
-
--- Toggle comments with a single key
-vim.api.nvim_set_keymap("n", "<leader>/", [[:lua ToggleComment()<CR>]], { noremap = true, silent = true })
-
-function ToggleComment()
-	local comment_symbol = "// "
-	local line = vim.fn.getline(".")
-	if string.find(line, "^" .. comment_symbol) then
-		-- Uncomment the line
-		vim.fn.setline(".", string.gsub(line, comment_symbol, ""))
-	else
-		-- Comment the line
-		vim.fn.setline(".", comment_symbol .. line)
-	end
-end
-
--- Toggle comments with a single key
-vim.api.nvim_set_keymap("n", "g/", [[:lua ToggleComment()<CR>]], { noremap = true, silent = true })
-
-function ToggleComment()
-	local comment_symbol = "// "
-	local line = vim.fn.getline(".")
-	if string.find(line, "^" .. comment_symbol) then
-		-- Uncomment the line
-		vim.fn.setline(".", string.gsub(line, comment_symbol, ""))
-	else
-		-- Comment the line
-		vim.fn.setline(".", comment_symbol .. line)
-	end
-end
+sahith.set("n", "<leader>e", ":NvimTreeToggle<CR>")
